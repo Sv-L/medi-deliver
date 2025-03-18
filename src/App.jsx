@@ -1,6 +1,6 @@
 
 import { lazy } from 'react';
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import Layout from './components/Layout';
 import PrivateRoute from './components/PrivateRout/PrivateRout';
 import PublicRoute from './components/PublicRoute';
