@@ -2,6 +2,8 @@ import {useForm} from "react-hook-form";
 import {LodinFormStyles} from "./AuthFormStyled"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup";
+import {useDispatch} from "react-redux";
+import {signInAPI} from "../../api/auth/authApi";
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -14,8 +16,10 @@ const AuthForm = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: yupResolver(schema),
     });
+  const dispatch = useDispatch();
     
-    const onSubmitHandler = (data) => {
+  const onSubmitHandler = (data) => {
+    dispatch(signInAPI({ ...data}));
     console.log({ data });
     reset();
   };
