@@ -1,6 +1,10 @@
+import Container from "../../components/Container"
+
 const DasboardPage = () => {
     return (
-        <h1>DasboardPage</h1>
+        <Container>
+            <h1>DasboardPage</h1>
+            </Container>
     )
 }
 

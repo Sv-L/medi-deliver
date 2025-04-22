@@ -1,19 +1,15 @@
 import styled from 'styled-components';
 
 export const ContainerStyles = styled.div`
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  padding:0 20px;
+  border: solid 1px green;
  
   @media screen and (max-width: 319px) {
-    padding-left: 20px;
-    padding-right: 20px;
     width: 100%;
   }
 
   @media screen and (min-width: 320px) {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   @media screen and (min-width: 375px) and (max-width: 767px) {
@@ -23,13 +19,11 @@ export const ContainerStyles = styled.div`
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
+    /* padding:0 32px; */
   }
 
   @media screen and (min-width: 1440px) {
     width: 1440px;
-    padding-left: 132px;
-    padding-right: 132px;
+    /* padding:0 132px; */
   }
 `;

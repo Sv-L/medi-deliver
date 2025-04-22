@@ -2,8 +2,9 @@ import {useForm} from "react-hook-form";
 import {LodinFormStyles} from "./AuthFormStyled"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {signInAPI} from "../../api/auth/authApi";
+import {isLoading} from "../../redux/auth/authSelectors";
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -17,10 +18,10 @@ const AuthForm = () => {
     resolver: yupResolver(schema),
     });
   const dispatch = useDispatch();
+  const loading = useSelector(isLoading)
     
   const onSubmitHandler = (data) => {
     dispatch(signInAPI({ ...data}));
-    console.log({ data });
     reset();
   };
     
@@ -30,7 +31,7 @@ const AuthForm = () => {
             <p>{errors.email?.message}</p>
             <input {...register("password")} placeholder="Password" type="password" required />
             <p>{errors.password?.message}</p>
-            <button type="submit">Log in</button>
+           {loading? <p>Loading...</p>:<button type="submit">Log in</button>} 
         </LodinFormStyles>
     )
 }
