@@ -4,10 +4,11 @@ import Orders from '../../../../assets/images/shopping-cart.svg';
 import Products from '../../../../assets/images/flask.svg';
 import Customers from '../../../../assets/images/pharmacy.svg';
 import Suppliers from '../../../../assets/images/users.svg';
+import { SideBarStyled } from './SideBarStyled';
 
 const SideBar = () => {
   return (
-    <ul>
+    <SideBarStyled>
       <li>
         <Link to="/dashboard">
           <img src={Dashboard} alt="Dashboard" />
@@ -33,7 +34,7 @@ const SideBar = () => {
           <img src={Suppliers} alt="Suppliers" />
         </Link>
       </li>
-    </ul>
+    </SideBarStyled>
   );
 };
 

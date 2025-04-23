@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
-import { ModalStyles } from './ModalStyles';
+import { ModalStyled } from './ModalStyled';
 
 const modalRoot = document.getElementById('modal-backdrop');
 
@@ -34,7 +34,7 @@ export const Modal = ({ children, closeModal, className }) => {
   };
 
   return createPortal(
-    <ModalStyles onClick={onBackdrop}>
+    <ModalStyled onClick={onBackdrop}>
       <div className={className}>
         <button
           type="button"
@@ -45,7 +45,7 @@ export const Modal = ({ children, closeModal, className }) => {
         </button>
         {children}
       </div>
-    </ModalStyles>,
+    </ModalStyled>,
     modalRoot
   );
 };

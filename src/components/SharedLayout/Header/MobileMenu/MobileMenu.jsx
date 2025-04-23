@@ -3,7 +3,7 @@ import Modal from '../../../Modal';
 import Menu from '../../../../assets/images/menu-burger.svg';
 import SideBar from '../SideBar';
 import LogoutBtn from '../LogoutBtn';
-import {MobileMenuButtonStyles} from './MobileMenuStyles';
+import { MobileMenuButtonStyles } from './MobileMenuStyles';
 
 const MobileMenu = () => {
   const [isShowMenu, setIsShowMenu] = useState(false);

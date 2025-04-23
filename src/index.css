@@ -43,7 +43,7 @@ button {
   margin: 0;
 }
 
-.ul {
+ul {
   list-style: none;
 }
 
@@ -62,6 +62,7 @@ img {
 button {
   cursor: pointer;
   border: none;
+  transition: var(--transition);
 }
 
 a {

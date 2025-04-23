@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ModalStyles = styled.div`
+export const ModalStyled = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -19,11 +19,16 @@ export const ModalStyles = styled.div`
     left: 50%;
     transform: translate(-50%, -50%); */
     /* border-radius: 10px; */
-    padding: 92px 20px;
+    /* padding: 92px 20px; */
     overflow: auto;
   }
   .mobMenu {
-    background-color: red;
+    padding: 92px 20px 20px;
+    height: 100hv;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: red; */
     /* top: 0;
     left: 0; */
   }
