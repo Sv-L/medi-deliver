@@ -1,9 +1,10 @@
 import Container from "../../components/Container"
+import Statistics from "../../components/Statistics/Statistics"
 
 const DasboardPage = () => {
     return (
         <Container>
-            <h1>DasboardPage</h1>
+            <Statistics/>
             </Container>
     )
 }

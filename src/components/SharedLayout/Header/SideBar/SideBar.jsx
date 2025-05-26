@@ -1,38 +1,38 @@
-import { Link } from 'react-router-dom';
 import Dashboard from '../../../../assets/images/dashboard.svg';
 import Orders from '../../../../assets/images/shopping-cart.svg';
 import Products from '../../../../assets/images/flask.svg';
-import Customers from '../../../../assets/images/pharmacy.svg';
-import Suppliers from '../../../../assets/images/users.svg';
+import Suppliers from '../../../../assets/images/pharmacy.svg';
+import Customers from '../../../../assets/images/users.svg';
 import { SideBarStyled } from './SideBarStyled';
+import { NavLink } from 'react-router';
 
 const SideBar = () => {
   return (
     <SideBarStyled>
       <li>
-        <Link to="/dashboard">
+        <NavLink to="/dashboard">
           <img src={Dashboard} alt="Dashboard" />
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link to="/orders">
+        <NavLink to="/orders">
           <img src={Orders} alt="Orders" />
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link to="/products">
+        <NavLink to="/products">
           <img src={Products} alt="Products" />
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link to="/customers">
-          <img src={Customers} alt="Customers" />
-        </Link>
-      </li>
-      <li>
-        <Link to="/suppliers">
+        <NavLink to="/suppliers">
           <img src={Suppliers} alt="Suppliers" />
-        </Link>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/customers">
+          <img src={Customers} alt="Customers" />
+        </NavLink>
       </li>
     </SideBarStyled>
   );
