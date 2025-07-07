@@ -28,18 +28,31 @@ export const ModalStyled = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* background-color: red; */
-    /* top: 0;
-    left: 0; */
+    background-color: var(--text);
+    transition: var(--transition);
+    
+
   }
 
   .close-btn {
-    cursor: pointer;
+    width: 32px;
+    height: 32px;
     position: absolute;
     right: 12px;
     top: 24px;
     background-color: transparent;
-    transition: 250ms linear;
+    transition: var(--transition);
     border: none;
+
+      path{
+        stroke:var(--primary-color);
+      }
+    
+      &:hover, &:focus{
+        path{
+        stroke:var(--btn-hover-box);
+        transition: var(--transition);
+      }
+      }
   }
 `;

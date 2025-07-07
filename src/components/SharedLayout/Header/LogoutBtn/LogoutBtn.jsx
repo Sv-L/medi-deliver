@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutAPI } from '../../../../api/auth/authApi';
 import { getId } from '../../../../redux/auth/authSelectors';
-import LogOut from '../../../../assets/images/logout.svg';
+import LogOut from '../../../../assets/images/logout.svg?react';
 import { LogoutBtnStyled } from './LogoutBtnStyled';
 
 const LogoutBtn = () => {
@@ -14,7 +14,7 @@ const LogoutBtn = () => {
         dispatch(logOutAPI());
       }}
     >
-      <img src={LogOut} alt="Logout" />
+      <LogOut/>
     </LogoutBtnStyled>
   );
 };

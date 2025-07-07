@@ -24,7 +24,7 @@ export const StatisticsStyled = styled.ul`
           width: 18px;
           height: 18px;
         }
-        p {
+        h3 {
           font-weight: 400;
           font-size: 12px;
           line-height: 117%;

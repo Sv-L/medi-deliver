@@ -11,7 +11,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
 <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-    <BrowserRouter basename="/medi-deliver">
+        <BrowserRouter
+          basename="/medi-deliver"
+        >
       <App />
     </BrowserRouter>
       </PersistGate>

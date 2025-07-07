@@ -1,6 +1,7 @@
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
 import { ModalStyled } from './ModalStyled';
+import CloseBtnIcon from '../../assets/images/close-btn.svg?react'
 
 const modalRoot = document.getElementById('modal-backdrop');
 
@@ -41,7 +42,7 @@ export const Modal = ({ children, closeModal, className }) => {
           onClick={() => closeModal()}
           className="close-btn"
         >
-          X
+          <CloseBtnIcon/>
         </button>
         {children}
       </div>

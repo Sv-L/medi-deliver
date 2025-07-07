@@ -15,11 +15,17 @@ background-position: bottom 0 right 0;
     padding: 18px 12px;
     border: 1px solid rgba(29, 30, 33, 0.1);
     border-radius: 60px;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
     background: var(--background-3);
+    outline: none;
+    transition: var(--transition);
 
-    /* &:first-child{
-        margin-bottom: 16px;
-    } */
+    &:focus{
+        border-color: var(--accent);
+        transition: var(--transition);
+    }
+  
 
  }
 

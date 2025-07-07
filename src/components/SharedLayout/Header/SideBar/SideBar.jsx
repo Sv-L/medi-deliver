@@ -1,37 +1,37 @@
-import Dashboard from '../../../../assets/images/dashboard.svg';
-import Orders from '../../../../assets/images/shopping-cart.svg';
-import Products from '../../../../assets/images/flask.svg';
-import Suppliers from '../../../../assets/images/pharmacy.svg';
-import Customers from '../../../../assets/images/users.svg';
+import Dashboard from '../../../../assets/images/dashboard.svg?react';
+import Orders from '../../../../assets/images/shopping-cart.svg?react';
+import Products from '../../../../assets/images/flask.svg?react';
+import Suppliers from '../../../../assets/images/pharmacy.svg?react';
+import Customers from '../../../../assets/images/users.svg?react';
 import { SideBarStyled } from './SideBarStyled';
-import { NavLink } from 'react-router';
+import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   return (
     <SideBarStyled>
       <li>
         <NavLink to="/dashboard">
-          <img src={Dashboard} alt="Dashboard" />
+          <Dashboard/>
         </NavLink>
       </li>
       <li>
         <NavLink to="/orders">
-          <img src={Orders} alt="Orders" />
+          <Orders/>
         </NavLink>
       </li>
       <li>
         <NavLink to="/products">
-          <img src={Products} alt="Products" />
+          <Products/>
         </NavLink>
       </li>
       <li>
         <NavLink to="/suppliers">
-          <img src={Suppliers} alt="Suppliers" />
+          <Suppliers/>
         </NavLink>
       </li>
       <li>
         <NavLink to="/customers">
-          <img src={Customers} alt="Customers" />
+          <Customers/>
         </NavLink>
       </li>
     </SideBarStyled>

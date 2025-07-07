@@ -1,12 +1,14 @@
 import Container from "../../components/Container"
+import IncomeExpenses from "../../components/IncomeExpenses"
 import RecentCustomers from "../../components/RecentCustomers"
-import Statistics from "../../components/Statistics/Statistics"
+import Statistics from "../../components/Statistics"
 
 const DasboardPage = () => {
     return (
         <Container>
             <Statistics />
-            <RecentCustomers/>
+            <RecentCustomers />
+            <IncomeExpenses/>
             </Container>
     )
 }

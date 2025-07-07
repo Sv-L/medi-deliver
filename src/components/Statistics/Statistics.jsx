@@ -9,7 +9,7 @@ const Statistics = () => {
         <a>
           <div>
             <img src={MoneyImg} alt="products" />
-            <p>All products</p>
+            <h3>All products</h3>
           </div>
           <p>111</p>
         </a>
@@ -18,7 +18,7 @@ const Statistics = () => {
         <a>
           <div>
             <img src={MoneyImg} alt="suppliers" />
-            <p>All suppliers</p>
+            <h3>All suppliers</h3>
           </div>
           <p>222</p>
         </a>
@@ -27,7 +27,7 @@ const Statistics = () => {
         <a>
           <div>
             <img src={CustomersImg} alt="customers" />
-            <p>All customers</p>
+            <h3>All customers</h3>
           </div>
           <p>333</p>
         </a>
