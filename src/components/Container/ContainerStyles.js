@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerStyles = styled.div`
   margin: 0 auto;
-  padding:0 20px;
+  padding:0 20px 40px;
   /* border: solid 1px green; */
  
   @media screen and (max-width: 319px) {

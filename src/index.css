@@ -10,6 +10,7 @@
   --background: #e7f1ed;
   --background-2: #f7f8fa;
   --background-3: #fff;
+  --background-4: rgba(29, 30, 33, 0.08);
 
   --btn-hover-box: #3f945f;
   --btn-disabled-box: rgba(29, 30, 33, 0.1);
@@ -28,9 +29,10 @@ body {
   height: 100vh;
   background: var(--background-2);
   font-family: var(--main-font);
+  color: var(--primary-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--primary-color);
+  
 }
 
 h1,

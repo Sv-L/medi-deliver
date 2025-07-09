@@ -23,11 +23,10 @@ const IncomeExpenses = () => {
           return (
             <tr
               key={transaction.id}
-              style={{ textDecoration: error ? 'line-through' : 'none' }}
             >
               <td>{transactionType}</td>
               <td>{transaction.address}</td>
-              <td>{sum}</td>
+              <td style={{ textDecoration: error ? 'line-through' : 'none' }}>{sum}</td>
             </tr>
           );
         })}

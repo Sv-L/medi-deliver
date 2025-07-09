@@ -1,0 +1,1 @@
+export const getCuctomers = state => state.customers.items;

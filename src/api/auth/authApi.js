@@ -1,8 +1,6 @@
-import axios from 'axios';
+import axios from '../axiosConfig';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-
-axios.defaults.baseURL = 'https://medi-deliver.onrender.com/api';
 
 export const signInAPI = createAsyncThunk(
   'signIn/signInAPI',

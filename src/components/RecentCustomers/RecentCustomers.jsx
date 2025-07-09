@@ -1,17 +1,28 @@
-import { useState } from 'react';
-import { customersRev } from './customers';
-
+import { useEffect, useState } from 'react';
 import {
   RecentCustomersButtonStyled,
   RecentCustomersStyled,
 } from './RecentCustomersStyled';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCuctomers } from '../../redux/customers/customersSelectors';
+import { fetchAllcustomers } from '../../api/customers/customersApi';
 
 const RecentCustomers = () => {
   const [toggled, setToggled] = useState(false);
-  let slice = toggled ? [5, 10] : [0, 5];
-  const customers = customersRev.slice(...slice);
+  const customers = useSelector(getCuctomers);
+  const dispatch = useDispatch();
 
-  return (
+  useEffect(() => {
+    dispatch(fetchAllcustomers({}));
+
+    if (toggled) {
+      dispatch(fetchAllcustomers({page:2}));
+    }
+  }, [toggled,dispatch, fetchAllcustomers]);
+  
+  
+
+  return customers ? (
     <>
       <RecentCustomersStyled>
         <caption>Recent Customers</caption>
@@ -23,13 +34,13 @@ const RecentCustomers = () => {
           </tr>
         </thead>
         <tbody>
-          {customers.map(customer => (
-            <tr key={customer.id}>
+          {customers.map(({ _id, name, image, email, spent }) => (
+            <tr key={_id}>
               <td>
-                <img src={customer.img} alt="avatar" /> {customer.name}
+                <img src={image} alt="avatar" /> {name}
               </td>
-              <td>{customer.email}</td>
-              <td>{customer.spend}</td>
+              <td>{email}</td>
+              <td>{spent}</td>
             </tr>
           ))}
         </tbody>
@@ -41,6 +52,8 @@ const RecentCustomers = () => {
         <div></div>
       </RecentCustomersButtonStyled>
     </>
+  ) : (
+    <p>here are no customers.</p>
   );
 };
 
