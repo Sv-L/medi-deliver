@@ -1,11 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "../axiosConfig"
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
-export const fetchAllcustomers = createAsyncThunk(
-    'customers/fetchAllcustomers', async ({ page, limit, name, sortBy, order,signal }, { rejectWithValue }) => {
+export const fetchAllorders = createAsyncThunk(
+    'orders/fetchAllorders', async ({ page, limit, name, sortBy, order,signal }, { rejectWithValue }) => {
         try {
-      const { data } = await axios.get('/customers', {
+      const { data } = await axios.get('/orders', {
         params: { page, limit, name, sortBy, order}
       });
       

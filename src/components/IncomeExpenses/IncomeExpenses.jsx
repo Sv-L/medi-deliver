@@ -1,37 +1,36 @@
-import { transactions } from './transactions';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect} from 'react';
+import { fetchAllTransactions } from '../../api/transactions/transactionsApi';
+import { getTransaction } from '../../redux/transactions/transactionsSelectors';
+import Table from '../Table';
 
 const IncomeExpenses = () => {
-  return (
-    <table>
-      <caption>Income/Expenses</caption>
-      <thead>
-        <tr>
-          <td>Today</td></tr>
-      </thead>
-      <tbody>
-        {transactions.map(function (transaction) {
-          const error = transaction.storno;
-          const isIncome = Number(transaction.sum) > 0;
-          const transactionType = error
-            ? 'Error'
-            : isIncome
-            ? 'Income'
-            : 'Expense';
 
-          const sum = isIncome ? `+${transaction.sum}` : `${transaction.sum}`;
+  const transactions = useSelector(getTransaction)
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchAllTransactions({}));
+  }, [dispatch, fetchAllTransactions]);
+  
+const tableSchemas = [
+    { 'Type': 'type' },
+    { 'Adresse': 'name' },
+    { 'Amount': 'amount' },
+  ];
 
-          return (
-            <tr
-              key={transaction.id}
-            >
-              <td>{transactionType}</td>
-              <td>{transaction.address}</td>
-              <td style={{ textDecoration: error ? 'line-through' : 'none' }}>{sum}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  );
+  const strikeThrough = (row, index) => {
+    const shouldStrikeThrough = row.type === "Error" && index === 2
+    return shouldStrikeThrough ? { textDecoration: 'line-through' } : {};               
+};
+
+  return transactions ? 
+    <Table
+      caption={'Income/Expenses'}
+      tableSchemas={tableSchemas}
+      data={transactions}
+      columnsTitel={false}
+      styles = {strikeThrough}
+    />
+   :<p>Here are no Income/Expenses.</p>
 };
 export default IncomeExpenses;

@@ -1,11 +1,10 @@
 import AuthForm from "../../components/Auth"
 import LogoImg from '../../assets/masc-group.svg'
 import {LodinPagesStyles, LogoStyles} from "./LoginPageStyles"
-import Container from '../../components/Container'
 
 const LoginPage = () => {
     return (
-      <Container> <LodinPagesStyles>
+      <> <LodinPagesStyles>
         <LogoStyles>
         <a href="/" target="_blank">
           <img src={LogoImg} alt="medy logo" />
@@ -16,7 +15,7 @@ const LoginPage = () => {
       <AuthForm/>
         </LodinPagesStyles>
         
-        </Container>
+        </>
         
     )
 }

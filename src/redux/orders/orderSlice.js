@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchAllcustomers } from "../../api/customers/customersApi";
+import { fetchAllorders } from "../../api/orders/ordersApi";
 
 const initialState = {
   items: [],
@@ -8,24 +8,23 @@ const initialState = {
     error: null,
 }
     
-
-const customersSlice = createSlice({
-    name: 'customers',
+const ordersSlice = createSlice({
+    name: 'orders',
     initialState,
   
     extraReducers: builder => {
       builder
         /*****************fetchAllcustomers********************/
-        .addCase(fetchAllcustomers.pending, state => {
+        .addCase(fetchAllorders.pending, state => {
           state.isLoading = true;
         })
-        .addCase(fetchAllcustomers.fulfilled, (state, {payload}) => {
+        .addCase(fetchAllorders.fulfilled, (state, {payload}) => {
             state.isLoading = false;
           state.items = payload.data;
           state.count = payload.count;
 
         })
-        .addCase(fetchAllcustomers.rejected, state => {
+        .addCase(fetchAllorders.rejected, state => {
           state.isLoading = false;
           state.items = [];
         })
@@ -33,4 +32,4 @@ const customersSlice = createSlice({
     },
   });
   
-  export const customersReducer = customersSlice.reducer;
+  export const ordersReducer = ordersSlice.reducer;

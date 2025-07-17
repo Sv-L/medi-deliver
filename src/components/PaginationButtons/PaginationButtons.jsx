@@ -1,32 +1,27 @@
-import { useEffect, useState } from "react"
-import { PaginationButtonsStyled } from "./PaginationButtonsStyled"
-import { useDispatch} from "react-redux";
-import { fetchAllcustomers } from "../../api/customers/customersApi";
+import { useEffect} from 'react';
+import { PaginationButtonsStyled } from './PaginationButtonsStyled';
+import { useDispatch, useSelector } from 'react-redux';
+import { getFilter } from '../../redux/filter/filterSelector';
 
-const PaginationButtons = () => {
-  const [activeBtn, setActiveBtn] = useState(1)
+const PaginationButtons = ({activeBtn, setActiveBtn, buttonCount, fetch}) => {
   const dispatch = useDispatch();
+  const filter = useSelector(getFilter);
 
-    useEffect(() => {
-        dispatch(fetchAllcustomers({ page: activeBtn }));
-        
-    }, [activeBtn, dispatch, fetchAllcustomers]);
-    
-    
-    const numberOfButtons = Math.ceil(88/5);
 
-    return (
-             <PaginationButtonsStyled>
-            {Array.from({ length: numberOfButtons }, (_, index) => (
-                <button
-                    key={index}
-                    // autoFocus={index + 1 === activeBtn}
-                    className={index+1 === activeBtn ? 'active' : ''}
-                onClick={() => setActiveBtn(index+1)}
-              ></button>
-            ))}
-        </PaginationButtonsStyled>
-        
-    )
-}
-export default PaginationButtons
+  useEffect(() => {
+    dispatch(fetch({ page: activeBtn, name: filter }));
+  }, [activeBtn, dispatch, fetch]);
+
+  return (
+    <PaginationButtonsStyled>
+      {Array.from({ length: buttonCount }, (_, index) => (
+        <button
+          key={index}
+          className={index + 1 === activeBtn ? 'active' : ''}
+          onClick={() => setActiveBtn(index + 1)}
+        ></button>
+      ))}
+    </PaginationButtonsStyled>
+  );
+};
+export default PaginationButtons;

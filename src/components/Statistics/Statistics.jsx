@@ -1,8 +1,12 @@
 import MoneyImg from '../../assets/images/money.svg';
 import CustomersImg from '../../assets/images/ci_users.svg';
 import { StatisticsStyled } from './StatisticsStyled';
+import { useSelector } from 'react-redux';
+import { getCustomersCount } from '../../redux/customers/customersSelectors';
 
 const Statistics = () => {
+
+  const customersCount = useSelector(getCustomersCount);
   return (
     <StatisticsStyled>
       <li>
@@ -29,7 +33,7 @@ const Statistics = () => {
             <img src={CustomersImg} alt="customers" />
             <h3>All customers</h3>
           </div>
-          <p>333</p>
+          <p>{customersCount}</p>
         </a>
       </li>
     </StatisticsStyled>
