@@ -10,8 +10,7 @@ export const ModalStyled = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
   transition: 250ms linear;
 
-  div {
-    position: relative;
+  & > div {
     max-height: 95%;
     position: absolute;
     background-color: #fff;
@@ -32,6 +31,19 @@ export const ModalStyled = styled.div`
     transition: var(--transition);
     
 
+  }
+
+  .product{
+    position: relative;
+    max-height: 95%;
+    position: absolute;
+    background-color: #fff;
+     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 40px 20px;
+    overflow: auto;
   }
 
   .close-btn {

@@ -11,7 +11,7 @@ export const fetchAllcustomers = createAsyncThunk(
       
       return data;
         }
-        catch {
+        catch(error) {
           if (error.name === 'AbortError') {
         console.log('Fetch aborted');
       }

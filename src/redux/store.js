@@ -15,6 +15,7 @@ import { customersReducer } from './customers/customersSlice';
 import { filterReducer } from './filter/filterSlice';
 import { transactionsReducer } from './transactions/transactionsSlice';
 import { ordersReducer } from './orders/orderSlice';
+import { productsReducer } from './products/productsSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -29,11 +30,13 @@ export const store = configureStore({
     filter: filterReducer,
     transactions: transactionsReducer,
     orders: ordersReducer,
+    products: productsReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoredActionPaths: ['payload'],
       },
     }),
 });

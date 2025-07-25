@@ -27,20 +27,4 @@ export const FilterStyled = styled.div`
     }
   }
 
-  button {
-    display: flex;
-    gap: 2px;
-    align-items: center;
-    border-radius: 60px;
-    padding: 13px 30px;
-    width: 112px;
-    height: 44px;
-    background: var(--accent);
-    color: var(--background-3);
-
-    &:focus, &:hover {
-     background-color: var(--btn-hover-box);
-      transition: var(--transition);
-    }
-  }
 `;
